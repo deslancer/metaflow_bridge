@@ -7,12 +7,12 @@ from ...API.Requests import Requests
 
 
 class WM_OP_VEDialog(bpy.types.Operator):
-    """Open VE Dialog"""
-    bl_label = "SignIn in Metaflow3D CMS"
+    """Sign In in Metaflow3D CMS"""
+    bl_label = "Sign In in Metaflow3D CMS"
     bl_idname = "wm.veop"
 
-    email: StringProperty(name="Enter your email", default="")
-    password: StringProperty(name="Enter your password", subtype="PASSWORD")
+    email: StringProperty(name="Email:", default="")
+    password: StringProperty(name="Password:", subtype="PASSWORD")
 
     def execute(self, context):
         mail = self.email
