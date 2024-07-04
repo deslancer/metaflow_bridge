@@ -21,6 +21,8 @@ def register_icon():
 
     pcoll.load("metaicon", os.path.join(icons_path, "metaicon_32x32.png"), 'IMAGE')
     pcoll.load("login_icon", os.path.join(icons_path, "login.png"), 'IMAGE')
+    pcoll.load("logout_icon", os.path.join(icons_path, "logout.png"), 'IMAGE')
+    pcoll.load("export_icon", os.path.join(icons_path, "export-variant.png"), 'IMAGE')
 
     preview_collections["main"] = pcoll
 
