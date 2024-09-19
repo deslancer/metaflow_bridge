@@ -10,7 +10,7 @@ creds_file = os.path.join(current_dir.parents[1], "creds", "user_creds.json")
 
 
 class VE_PT_Panel(bpy.types.Panel):
-    bl_label = "Metaflow3d"
+    bl_label = "Export to Metaflow3d"
     bl_idname = "VE_PT_Panel"
     bl_space_type = "VIEW_3D"
     bl_region_type = "UI"
@@ -27,6 +27,7 @@ class VE_PT_Panel(bpy.types.Panel):
                 creds = json.load(file)
                 export_icon = pcoll["export_icon"]
                 logout_icon = pcoll["logout_icon"]
+                screenshot_icon = pcoll["screenshot_icon"]
 
                 row = layout.row()
                 row.label(text=f"Hello, {creds['data']['user_metadata']['user_name']}!")
@@ -36,6 +37,7 @@ class VE_PT_Panel(bpy.types.Panel):
                 box.prop(scene, "file_name", text='')
                 box.operator("object.export_model_op", text="Export model", icon_value=export_icon.icon_id)
                 layout.separator(factor=1)
+                box.operator("object.take_a_shot_op", text="Take a screenshot", icon_value=screenshot_icon.icon_id)
                 row = layout.row()
                 row.operator("wm.signout_op", text="Sign Out", icon_value=logout_icon.icon_id)
 
@@ -46,6 +48,4 @@ class VE_PT_Panel(bpy.types.Panel):
             row.label(text="Welcome to Metaflow3D Bridge", icon_value=metaflow_icon.icon_id)
             row = layout.row()
             row.operator("wm.signin_op", text="Sign In", icon_value=login_icon.icon_id)
-
-
 

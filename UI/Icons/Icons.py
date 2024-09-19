@@ -23,6 +23,7 @@ def register_icon():
     pcoll.load("login_icon", os.path.join(icons_path, "login.png"), 'IMAGE')
     pcoll.load("logout_icon", os.path.join(icons_path, "logout.png"), 'IMAGE')
     pcoll.load("export_icon", os.path.join(icons_path, "export-variant.png"), 'IMAGE')
+    pcoll.load("screenshot_icon", os.path.join(icons_path, "camera.png"), 'IMAGE')
 
     preview_collections["main"] = pcoll
 

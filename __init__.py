@@ -1,7 +1,7 @@
 bl_info = {
     "name": "MetaFlow3D Bridge",
     "author": "deslancer",
-    "version": (1, 0, 0),
+    "version": (1, 0, 1),
     "blender": (2, 80, 0),
     "description": "Bridge between Blender and MetaFlow3D for seamless data exchange.",
     "warning": "",
@@ -23,6 +23,7 @@ def register():
     bpy.utils.register_class(Dialog.WM_OP_VEDialog)
     bpy.utils.register_class(Operators.ExportModelOperator)
     bpy.utils.register_class(Operators.SignOutOperator)
+    bpy.utils.register_class(Operators.TakeScreenshotOperator)
     bpy.types.Scene.metaflow_user_name = StringProperty(name="Username", default="")
     bpy.types.Scene.metaflow_user_id = StringProperty(name="UserID", default="")
     bpy.types.Scene.file_name = bpy.props.StringProperty(name="FileName", default="")
@@ -34,6 +35,7 @@ def unregister():
     bpy.utils.unregister_class(Dialog.WM_OP_VEDialog)
     bpy.utils.unregister_class(Operators.ExportModelOperator)
     bpy.utils.unregister_class(Operators.SignOutOperator)
+    bpy.utils.unregister_class(Operators.TakeScreenshotOperator)
     del bpy.types.Scene.metaflow_user_name
     del bpy.types.Scene.metaflow_user_id
     del bpy.types.Scene.file_name
